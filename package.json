@@ -9,6 +9,7 @@
   "dependencies": {
     "react": "15.4.2",
     "react-native": "0.38.1",
+    "react-native-offline": "^3.1.0",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",

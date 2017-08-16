@@ -7,6 +7,9 @@ import {
 } from 'react-native';
 
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+
+import * as callServiceAction from '../../actions'
 
 class Home extends Component {
   
@@ -22,9 +25,14 @@ class Home extends Component {
     console.log('onPressssss')
 
     // this.message = this.props.response.msg
-    this.setState({
-      message: this.props.response.msg
-    })
+
+
+
+    // this.setState({
+    //   message: this.props.response.msg
+    // })
+
+    this.props.callServiceAction.fetchMessage()
   }
 
   render() {
@@ -38,7 +46,7 @@ class Home extends Component {
           />
         </View>
         <View style={styles.box}>
-          <Text>{this.state.message}</Text>
+          <Text>{this.props.response.msg}</Text>
         </View>
       </View>
     )
@@ -63,4 +71,9 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(Home);
+function mapDispatchToProps(dispatch) {
+  return {
+      callServiceAction: bindActionCreators(callServiceAction, dispatch),
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
