@@ -3,7 +3,7 @@ import axios from 'react-native-axios'
 import {config} from '../config'
 
 export function fetchMessage() {
-  function thunk(dispatch) {
+  function thunkFetchMessage(dispatch) {
     axios.get(config.urlService)
     .then((response) => {
       console.log('response : ', response)
@@ -17,9 +17,9 @@ export function fetchMessage() {
     })
   }
 
-  thunk.interceptInOffline = true
+  thunkFetchMessage.interceptInOffline = true
 
-  return thunk
+  return thunkFetchMessage
 }
 
 export function resetMessage() {

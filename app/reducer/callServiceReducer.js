@@ -18,10 +18,10 @@ export default function callService(state=initialState.response, action) {
       return {
         msg: initialState.response.msg
       }
-    case offlineActionTypes.FETCH_OFFLINE_MODE:
-      return {
-        msg: 'You\'re offline mode !!'
-      }
+    // case offlineActionTypes.FETCH_OFFLINE_MODE:
+    //   return {
+    //     msg: 'You\'re offline mode !!'
+    //   }
     default:
       return state
   }
