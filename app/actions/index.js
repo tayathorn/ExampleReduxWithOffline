@@ -18,6 +18,9 @@ export function fetchMessage() {
   }
 
   thunkFetchMessage.interceptInOffline = true
+  thunkFetchMessage.meta = {
+    retry: true
+  }
 
   return thunkFetchMessage
 }
